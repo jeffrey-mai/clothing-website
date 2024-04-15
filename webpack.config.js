@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: process.env.NODE_ENV,
   entry: {
     src: './client/index.js',
   },
@@ -33,7 +33,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Production',
+      title: 'Development',
       template: './client/index.html',
     }),
   ],
@@ -42,9 +42,9 @@ module.exports = {
       publicPath: '/build',
       directory: path.resolve(__dirname, 'build'),
     },
-    proxy: {
-      '/': 'http://localhost:3000',
-    },
+    proxy: [
+      {'/': 'http://localhost:3000'},
+    ],
     historyApiFallback: true,
   },
 };

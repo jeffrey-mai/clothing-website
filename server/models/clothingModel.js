@@ -11,12 +11,14 @@ const pool = new Pool({
   ssl: {
     require: true,
   },
+  idleTimeoutMillis: null,
 });
+
+// pool.connect();
 
 async function startDB() {
   await pool.connect();
-
-  fetchedData = {};
+  const fetchedData = {};
 
   const createClothingTableQuery = `
     CREATE TABLE IF NOT EXISTS clothes (
@@ -61,7 +63,7 @@ async function startDB() {
   return;
 }
 
-startDB();
+// startDB();
 
 module.exports = {
   query: (text, params, callback) => {
