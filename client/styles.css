@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: lightblue;
+  font-size: large;
+}
+
+.navBar img {
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+
+.navName {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 160px;
+  padding-left: 10px;
+}
+
+.navTab {
+  display: flex;
+  align-items: center;
+}
+
+.navTab a {
+  padding: 10px;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.myCart {
+  display: flex;
+  align-items: center;
+}
+
+.searchBar {
+  width: 400px;
+  height: 20px;
+  cursor: pointer;
+}

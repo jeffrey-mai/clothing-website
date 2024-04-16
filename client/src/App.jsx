@@ -4,7 +4,7 @@ import MainContainer from './containers/MainContainer.jsx';
 const App = () => {
   return (
     <div>
-      {/* <MainContainer/> */}
+      <MainContainer />
       <h1>Hello World!</h1>
     </div>
   );
