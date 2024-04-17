@@ -51,3 +51,49 @@ body {
   height: 20px;
   cursor: pointer;
 }
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.youtube-player {
+  pointer-events: none;
+  padding-top: 3px;
+}
+
+.menPhoto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 40px 0px 40px 0px;
+}
+
+.menPhoto_description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 60px;
+  color: white;
+  background-image: url(https://t4.ftcdn.net/jpg/00/95/66/97/360_F_95669744_SME4GdzkU9o2s7TIchZdHz82SouPZSrs.jpg);
+  height: 800px;
+  width: 500px;
+}
+
+.womenPhoto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.womenPhoto_description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 60px;
+  background-image: url(https://i.pinimg.com/originals/9f/0e/ba/9f0eba47d200c122434fa3c640f5d1ab.jpg);
+  height: 800px;
+  width: 500px;
+}
