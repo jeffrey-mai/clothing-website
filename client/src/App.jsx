@@ -5,7 +5,6 @@ const App = () => {
   return (
     <div>
       <MainContainer />
-      <h1>Hello World!</h1>
     </div>
   );
 };
