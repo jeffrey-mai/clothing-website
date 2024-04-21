@@ -7,15 +7,22 @@ import logo from '../assets/logo.png';
 const NavBar = () => {
   return (
     <div className='navBar'>
+      <div className='navBar_categories'>
+        <a>Men</a>
+        <a>Women</a>
+        <a>Electronics</a>
+        <a>Jewleries</a>
+        <a>(logo) Search</a>
+      </div>
       <div className='navName'>
         <img src={logo}/>
         Clothing Store
       </div>
-      <form action="/search" method="get">
+      {/* <form action="/search" method="get">
         <div>
           <input className="searchBar" type="text" name="q" placeholder="Search for your clothes"/>
         </div>
-      </form>
+      </form> */}
       <div className='navTab'>
         <div className='account'>
           <img className='accountIcon' src={accountIcon}/>

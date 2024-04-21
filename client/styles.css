@@ -7,9 +7,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 10px;
-  background-color: lightblue;
+  /* background-color: lightblue; */
   font-size: large;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.navBar:hover {
+  background-color: white;
+  color: black;
 }
 
 .navBar img {
@@ -18,12 +28,16 @@ body {
   transition: opacity 0.3s ease;
 }
 
+.navBar_categories a {
+  margin: 0px 10px 0px 10px;
+  cursor: pointer;
+}
+
 .navName {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 160px;
-  padding-left: 10px;
   cursor: pointer;
 }
 
@@ -49,6 +63,10 @@ body {
   cursor: pointer;
 }
 
+.myCart a {
+  margin-right: 20px;
+}
+
 .searchBar {
   width: 400px;
   height: 20px;
@@ -63,7 +81,6 @@ body {
 
 .youtube-player {
   pointer-events: none;
-  padding-top: 3px;
 }
 
 .menPhoto {

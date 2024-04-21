@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import menPhoto from '../assets/menPhoto.jpg'
+import menPhoto from '../assets/menPhoto.jpg';
+import homepageGIF from '../assets/homepageGIF.mp4';
 
 const Homepage = () => {
   
   return (
     <div className='homepage'>
-      <iframe class="youtube-player" 
-        type="text/html" 
-        width="100%" 
-        height="850px" 
-        src="https://www.youtube.com/embed/1ap0baidLVo?autoplay=1&mute=1&controls=0&loop=1" 
-        frameborder="0" 
-        allowfullscreen>
-      </iframe>
-      {/* <img width='800px' src='https://i.pinimg.com/736x/a7/c3/1d/a7c31df4f8483c0dae0da126089a3689.jpg'/> */}
+      <video class="youtube-player" width="100%" autoplay='true' loop='true' muted='true'>
+        <source src={homepageGIF} type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
       <div className='menPhoto'>
         <div className='menPhoto_description'>
           <h1>Shop Men Clothes</h1>
