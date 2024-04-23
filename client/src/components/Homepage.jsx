@@ -6,7 +6,7 @@ const Homepage = () => {
   
   return (
     <div className='homepage'>
-      <video class="youtube-player" width="100%" autoplay='true' loop='true' muted='true'>
+      <video className="youtube-player" width="100%" autoPlay loop={true} muted={true}>
         <source src={homepageGIF} type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
