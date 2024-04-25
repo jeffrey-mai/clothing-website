@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar.jsx';
-import Homepage from '../components/Homepage.jsx';
+import Shopping from '../components/Shopping.jsx';
 import ToS from '../components/TermsOfService.jsx';
 
-const MainContainer = () => {
+const MenContainer = () => {
   
   return (
-    <div className='mainContainer'>
+    <div className='menContainer'>
       <NavBar />
-      <Homepage />
+      <Shopping />
       <ToS />
     </div>
   )
 }
 
-export default MainContainer;
+export default MenContainer;
