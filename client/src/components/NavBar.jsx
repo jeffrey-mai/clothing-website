@@ -31,10 +31,10 @@ const NavBar = () => {
   return (
     <div className='navBar' id='navBar'>
       <div className='navBar_categories'>
-        <a>Men</a>
-        <a>Women</a>
-        <a>Electronics</a>
-        <a>Jewleries</a>
+        <a href='http://localhost:8081/men'>Men</a>
+        <a href='http://localhost:8081/women'>Women</a>
+        <a href='http://localhost:8081/electronics'>Electronics</a>
+        <a href='http://localhost:8081/jewleries'>Jewleries</a>
         <img className='searchIcon' src={searchIcon}/>
         <a>Search</a>
       </div>

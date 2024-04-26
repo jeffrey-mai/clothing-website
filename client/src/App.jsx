@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import MainContainer from './containers/MainContainer.jsx';
 import MenContainer from './containers/MenContainer.jsx';
 import WomenContainer from './containers/WomenContainer.jsx';
@@ -13,8 +13,8 @@ const App = () => {
         <Route path="/" element={<MainContainer />} />
         <Route path="/men" element={<MenContainer />} />
         <Route path="/women" element={<WomenContainer />} />
-        <Route path="/electronic" element={<ElectronicContainer />} />
-        <Route path="/jewlery" element={<JewleryContainer />} />
+        <Route path="/electronics" element={<ElectronicContainer />} />
+        <Route path="/jewleries" element={<JewleryContainer />} />
       </Routes>
     </Router>
   );

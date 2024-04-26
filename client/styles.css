@@ -36,6 +36,8 @@ body {
 .navBar_categories a {
   margin: 0px 10px 0px 10px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .searchIcon {
