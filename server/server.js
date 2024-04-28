@@ -6,6 +6,12 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(process.cwd() + '/src/build'));
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8081');
+  next();
+});
+
 app.use('/', clothingRouter);
 
 app.use((req, res) =>

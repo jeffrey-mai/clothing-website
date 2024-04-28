@@ -38,10 +38,10 @@ const NavBar = () => {
         <img className='searchIcon' src={searchIcon}/>
         <a>Search</a>
       </div>
-      <div className='navName'>
+      <a className='navName' href='http://localhost:8081'>
         <img src={logo}/>
         Clothing Store
-      </div>
+      </a>
       <div className='navTab'>
         <div className='account'>
           <img className='accountIcon' src={accountIcon}/>

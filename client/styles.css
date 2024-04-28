@@ -62,6 +62,8 @@ body {
   cursor: pointer;
   position: relative;
   margin-right: 10%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .navTab {
@@ -192,4 +194,37 @@ body {
 .cartIcon:hover, .searchIcon:hover {
   cursor: pointer;
   opacity: 0.7;
+}
+
+.shopping {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopping_img {
+  width: 100%;
+}
+
+.shopping_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopping_products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid black;
+
+  /* width: 20%; */
+}
+
+.shopping_items {
+  margin-left: 5px;
+  border: 2px solid black;
+
+  /* width: 80%; */
 }
