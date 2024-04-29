@@ -211,20 +211,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .shopping_products {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid black;
-
-  /* width: 20%; */
+  border: 1px solid black;
+  width: 200px;
+  margin-left: 10px;
+  padding: 10px;
 }
 
 .shopping_items {
-  margin-left: 5px;
-  border: 2px solid black;
-
-  /* width: 80%; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  border: 1px solid black;
+  width: 1600px;
+  margin-right: 10px;
 }

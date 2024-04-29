@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import womenHomePic from '../assets/womenHomePic.jpg';
 import menHomePic from '../assets/menHomePic.jpg';
 
-const Shopping = () => {
-  const currentUrl = window.location.href;
-  let categoryPhoto, categoryProducts, categoryItems, fetchedData;
+const Shopping = (props) => {
+  const {categoryItems} = props, currentUrl = window.location.href;
+  let categoryPhoto, categoryProducts;
+
+  console.log(categoryItems);
 
   if (currentUrl === 'http://localhost:8081/men'){
     categoryPhoto = 'https://i0.wp.com/manforhimself.com/wp-content/uploads/2017/07/mens-clothing-sale-deals-online.jpg?fit=2000%2C1125&ssl=1';
@@ -13,22 +15,6 @@ const Shopping = () => {
       <div className='shopping_products'>
         <a>Hoodies</a>
         <a>Shirts</a>
-      </div>
-    );
-
-    fetch('http://localhost:3000/men-clothes')
-      .then(response => response.json())
-      .then(data => {
-        fetchedData = data;
-      })
-      .catch(err => console.log(err));
-      console.log(fetchedData);
-      console.log("yo");
-    
-    // Fetch for data and store it into categoryItems
-    categoryItems = (
-      <div className='shopping_items'>
-          ITEMS
       </div>
     );
   }
@@ -78,7 +64,7 @@ const Shopping = () => {
       <div className='shopping_container'>
         {categoryProducts}
         <div className='shopping_items'>
-          ITEMS
+          {categoryItems.map((ele, i) => (<img key={i} src={ele} width='250px' height='300px'/>))}
         </div>
       </div>
     </div>
