@@ -12,10 +12,10 @@ const TermsOfService = () => {
       <div className='tos_shop'>
         <h2 className='tos_shop_title'>SHOP</h2>
         <div className='tos_shop_category'>
-          <p className='tos_shop_men'>Men</p>
-          <p className='tos_shop_women'>Women</p>
-          <p className='tos_shop_electronics'>Electronics</p>
-          <p className='tos_shop_jewleries'>Jewleries</p>
+          <a href='http://localhost:8081/men' className='tos_shop_men'>Men</a>
+          <a href='http://localhost:8081/women' className='tos_shop_women'>Women</a>
+          <a href='http://localhost:8081/electronics' className='tos_shop_electronics'>Electronics</a>
+          <a href='http://localhost:8081/jewleries' className='tos_shop_jewleries'>Jewleries</a>
         </div>
       </div>
       <div className='tos_socialMedia'>

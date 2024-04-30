@@ -164,8 +164,15 @@ body {
   width: 500px;
 }
 
+.tos_shop_category a {
+  margin-top: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
 .tos_shop_men:hover, .tos_shop_women:hover,
-.tos_shop_electronics:hover, .tos_shop_jewleries:hover {
+.tos_shop_electronics:hover, .tos_shop_jewleries:hover,
+.shopping_products a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -225,9 +232,18 @@ body {
   padding: 10px;
 }
 
+.shopping_products h3 {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.shopping_products a {
+  margin-bottom: 15px;
+}
+
 .shopping_items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
   border: 1px solid black;
   width: 1600px;
