@@ -12,7 +12,7 @@ const ElectronicContainer = () => {
       .then(data => {
         const categoryItems = [];
         for(const key in data.rows){
-          categoryItems.push(data.rows[key].image);
+          categoryItems.push(data.rows[key]);
         }
         setItems(categoryItems);
       })

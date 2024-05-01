@@ -4,7 +4,7 @@ import womenHomePic from '../assets/womenHomePic.jpg';
 import menHomePic from '../assets/menHomePic.jpg';
 
 const Shopping = (props) => {
-  const {categoryItems} = props, currentUrl = window.location.href;
+  const currentUrl = window.location.href;
   let categoryPhoto, categoryProducts;
 
   if (currentUrl === 'http://localhost:8081/men'){
@@ -90,8 +90,18 @@ const Shopping = (props) => {
       <div className='shopping_container'>
         {categoryProducts}
         <div className='shopping_items'>
-          {categoryItems.map((ele, i) => (<img key={i} src={ele} width='250px' height='300px'/>))}
-          <Item />
+          {props.categoryItems.map(ele => {
+            return(
+              <Item 
+                key={ele.id}
+                image={ele.image} 
+                name={ele.title} 
+                price={ele.price} 
+                rating_rate={ele.rating_rate} 
+                rating_count={ele.rating_count} 
+              />
+            )
+          })}
         </div>
       </div>
     </div>

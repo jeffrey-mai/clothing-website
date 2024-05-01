@@ -216,9 +216,9 @@ body {
 
 .shopping_container {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
-  margin-top: 10px;
+  margin: 15px 0px 0px 0px;
   width: 100%;
 }
 
@@ -228,8 +228,8 @@ body {
   justify-content: center;
   border: 1px solid black;
   width: 200px;
-  margin-left: 10px;
-  padding: 10px;
+  margin-left: 15px;
+  padding: 10px 10px 0px 10px;
 }
 
 .shopping_products h3 {
@@ -243,9 +243,37 @@ body {
 
 .shopping_items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
   border: 1px solid black;
   width: 1600px;
-  margin-right: 10px;
+}
+
+.shopping_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 15px 15px 15px;
+  border: 1px solid black;
+}
+
+.shopping_item_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.shopping_item_name p {
+  text-align: center;
+  margin: 10px 0px 5px 0px;
+}
+
+.shopping_item_rating_price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shopping_item_rating_price p {
+  margin: 5px 0px 5px 0px;
 }
