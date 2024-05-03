@@ -72,17 +72,6 @@ const Shopping = (props) => {
       </div>
     );
   }
-
-  // window.addEventListener('scroll', function() {
-  //   var scrollPos = window.scrollY;
-  //   var image = document.querySelector('.shopping_img');
-    
-  //   // Calculate the amount to scale down the image based on scroll position
-  //   var scale = Math.max(1 - (scrollPos / window.innerHeight), 0.5);
-    
-  //   // Apply the scale transformation to the image
-  //   image.style.transform = 'scale(' + scale + ')';
-  // });
   
   return (
     <div className='shopping'>
@@ -99,6 +88,8 @@ const Shopping = (props) => {
                 price={ele.price} 
                 rating_rate={ele.rating_rate} 
                 rating_count={ele.rating_count} 
+                description={ele.description}
+                category={ele.category}
               />
             )
           })}
