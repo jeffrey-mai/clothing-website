@@ -277,7 +277,21 @@ body {
   width: 95%;
 }
 
-.shopping_item_name p {
+.enlarged_shopping_item_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: scaleX(0.85) scaleY(1);
+}
+
+.shopping_item_scrollbar {
+  overflow: auto;
+  width: 290px;
+  height: 400px;
+  /* margin-right: 10px; */
+}
+
+.shopping_item_name {
   text-align: center;
   margin: 10px 0px 5px 0px;
 }
@@ -289,4 +303,19 @@ body {
 
 .shopping_item_rating_price p {
   margin: 5px 0px 5px 0px;
+}
+
+.enlarged_shopping_item_addCart_price {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.shopping_item_rating {
+  display: flex;
+  align-items: center;
+}
+
+.emptyStar {
+  filter: brightness(0) invert(1);
 }
