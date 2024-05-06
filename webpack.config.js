@@ -27,7 +27,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif|mp4|webp)$/i,
+        test: /\.(png|jpe?g|gif|mp4|ico)$/i,
         loader: 'file-loader',
       },
     ],
@@ -36,9 +36,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Development',
       template: './client/index.html',
+      favicon: './client/favicon.ico',
     }),
     new CopyPlugin({
-      patterns: [{ from: './client/styles.css' }],
+      patterns: [
+        { from: './client/styles.css' },
+        { from: './client/favicon.ico' },
+      ],
     }),
   ],
   devServer: {

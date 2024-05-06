@@ -307,15 +307,19 @@ body {
 
 .enlarged_shopping_item_addCart_price {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-right: 20px;
+}
+
+.enlarged_shopping_item_addCart_price button {
+  height: 80%;
+  width: 40%;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .shopping_item_rating {
   display: flex;
   align-items: center;
-}
-
-.emptyStar {
-  filter: brightness(0) invert(1);
 }

@@ -4,10 +4,22 @@ import emptyStar from '../assets/empty-star.png';
 
 const Item = (props) => {
   const {image, name, price, rating_rate, rating_count, description, category} = props;
-  const ratingStars = [];
-  for(let i = 1; i < 6; i++){
-    if(i <= rating_rate) ratingStars.push(<img className='star' height='18px' width='18px' src={star}/>);
-    else ratingStars.push(<img className='emptyStar' height='18px' width='18px' src={emptyStar}/>);
+  const ratingStars = [], integerRating = Math.floor(rating_rate), fractionalRating = rating_rate - integerRating;
+  for(let i = 1; i <= integerRating; i++){
+    if(i <= rating_rate) ratingStars.push(<img key={i} className='star' height='18px' width='18px' src={star}/>);
+  }
+
+  // if(fractionalRating > 0){
+  //   ratingStars.push(
+  //     <div className='partialStar'>
+  //       <img className='star' height='18px' width='18px' src={star} />
+  //       <img className='emptyStar' height='18px' width='18px' src={emptyStar} />
+  //     </div>
+  //   );
+  // }
+
+  for (let i = ratingStars.length + 1; i <= 5; i++) {
+    ratingStars.push(<img key={i} className='emptyStar' height='18px' width='18px' src={emptyStar} />);
   }
 
   const [isHovered, setIsHovered] = useState(false);
