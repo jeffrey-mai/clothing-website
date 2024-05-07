@@ -3,8 +3,10 @@ import star from '../assets/star.png';
 import emptyStar from '../assets/empty-star.png';
 
 const Item = (props) => {
-  const {image, name, price, rating_rate, rating_count, description, category} = props;
-  const ratingStars = [], integerRating = Math.floor(rating_rate), fractionalRating = rating_rate - integerRating;
+  const {image, name, price, rating_rate, rating_count, description, colors} = props;
+  const integerRating = Math.floor(rating_rate), fractionalRating = rating_rate - integerRating;
+  const ratingStars = [], itemColors = [];
+
   for(let i = 1; i <= integerRating; i++){
     if(i <= rating_rate) ratingStars.push(<img key={i} className='star' height='18px' width='18px' src={star}/>);
   }
@@ -18,10 +20,31 @@ const Item = (props) => {
   //   );
   // }
 
-  for (let i = ratingStars.length + 1; i <= 5; i++) {
+  for(let i = ratingStars.length + 1; i <= 5; i++) {
     ratingStars.push(<img key={i} className='emptyStar' height='18px' width='18px' src={emptyStar} />);
   }
 
+  for(const color of colors){
+    if(color !== 'white' || color !== 'grey'){
+      itemColors.push(
+        <div 
+          className='shopping_item_color' 
+          style={{ backgroundColor: color }}
+        />
+      );
+    }
+    else{
+      itemColors.push(
+        <div 
+          className='shopping_item_color' 
+          style={{ backgroundColor: color, border: '1px solid grey' }}
+        />
+      );
+    }
+  }
+
+  const [selectedOption, setSelectedOption] = useState('');
+  const [quantity, setQuantity] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
   const [itemDescription, setItemDescription] = useState(
     <div className='shopping_item_description'>
@@ -34,6 +57,27 @@ const Item = (props) => {
       </div>
     </div>
   );
+  
+  const options = [
+    { label: 'Extra Small', value: 'Extra Small' },
+    { label: 'Small', value: 'Small' },
+    { label: 'Medium', value: 'Medium' },
+    { label: 'Large', value: 'Large' },
+    { label: 'Extra Large', value: 'Extra Large' },
+  ];
+
+  const handleSelectChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedOption(selectedValue);
+  };
+
+  const handleDecrement = () => {
+    if(quantity > 1) setQuantity(quantity - 1);
+  };
+
+  const handleIncrement = () => {
+    if(quantity < 10) setQuantity(quantity + 1);
+  };
 
   useEffect(() => {
     if(isHovered){
@@ -46,6 +90,25 @@ const Item = (props) => {
                 <p>Rating:&nbsp;{rating_rate}</p>
                 {ratingStars}
                 <p>&nbsp;({rating_count})</p>
+              </div>
+              <div className='shopping_item_colors'>
+                <p>Color:&nbsp;</p>
+                {itemColors}
+              </div>
+              <div className='shopping_item_size_quantity'>
+                <select className='shopping_item_size' value={selectedOption} onChange={handleSelectChange}>
+                  <option value=''>Size</option>
+                  {options.map((option, index) => (
+                    <option key={index} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+                <div className='shopping_item_quantity'>
+                  <button onClick={handleDecrement}>-</button>
+                  <input type="text" value={quantity} />
+                  <button onClick={handleIncrement}>+</button>
+                </div>
               </div>
               <p>{description}</p>
             </div>
@@ -70,7 +133,7 @@ const Item = (props) => {
         </div>
       );
     }
-  }, [isHovered])
+  }, [isHovered, selectedOption, quantity])
 
   return (
     <div 

@@ -83,13 +83,13 @@ const Shopping = (props) => {
             return(
               <Item 
                 key={ele.id}
-                image={ele.image} 
-                name={ele.title} 
-                price={ele.price} 
-                rating_rate={ele.rating_rate} 
-                rating_count={ele.rating_count} 
+                image={ele.image}
+                name={ele.title}
+                price={ele.price}
+                rating_rate={ele.rating_rate}
+                rating_count={ele.rating_count}
                 description={ele.description}
-                category={ele.category}
+                colors={ele.colors}
               />
             )
           })}

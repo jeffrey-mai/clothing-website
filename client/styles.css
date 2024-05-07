@@ -308,18 +308,83 @@ body {
 .enlarged_shopping_item_addCart_price {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-right: 20px;
 }
 
 .enlarged_shopping_item_addCart_price button {
   height: 80%;
-  width: 40%;
-  border-radius: 8px;
+  width: 60%;
+  border-radius: 9px;
+  background-color: black;
+  color: white;
   cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.enlarged_shopping_item_addCart_price button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
 
 .shopping_item_rating {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.shopping_item_colors {
+  display: flex;
+  align-items: center;
+
+}
+
+.shopping_item_color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.shopping_item_size_quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopping_item_size {
+  padding: 10px;
+  width: 60%;
+  cursor: pointer;
+  border-radius: 9px;
+}
+
+.shopping_item_size option {
+  font-size: large;
+  /* cursor: pointer; */
+}
+
+.shopping_item_quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid black;
+  padding: 10px;
+  width: 20%;
+  border-radius: 9px;
+}
+
+.shopping_item_quantity input{
+  width: 15px;
+  border: none;
+  pointer-events: none;
+}
+
+.shopping_item_quantity button{
+  border: none;
+  background-color: white;
+  cursor: pointer;
 }
