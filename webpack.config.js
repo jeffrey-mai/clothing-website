@@ -40,8 +40,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: './client/styles.css' },
-        { from: './client/favicon.ico' },
+        { from: './client/styles.css' }
       ],
     }),
   ],
