@@ -19,10 +19,18 @@ const TermsOfService = () => {
         </div>
       </div>
       <div className='tos_socialMedia'>
-        <img className='tos_instagram' height='30px' width='30px' src={instagramLogo} />
-        <img className='tos_tiktok' height='30px' width='30px' src={tiktokLogo} />
-        <img className='tos_youtube' height='30px' width='30px' src={youtubeLogo} />
-        <img className='tos_facebook' height='30px' width='30px' src={facebookLogo} />
+        <a href="https://www.instagram.com" target="_blank">
+          <img className='tos_instagram' height='30px' width='30px' src={instagramLogo} />
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+          <img className='tos_tiktok' height='30px' width='30px' src={tiktokLogo} />
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+          <img className='tos_youtube' height='30px' width='30px' src={youtubeLogo} />
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <img className='tos_facebook' height='30px' width='30px' src={facebookLogo} />
+        </a>
       </div>
       <div className='tos_description'>
         <p>
@@ -36,7 +44,9 @@ const TermsOfService = () => {
           (123-456-7890) for assistance.
         </p>
       </div>
-      <img className='tos_logo' height='60px' width='60px' src={logo} />
+      <a href='http://localhost:8081'>
+        <img className='tos_logo' height='60px' width='60px' src={logo} />
+      </a>
     </div>
   )
 }

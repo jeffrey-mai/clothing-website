@@ -11,7 +11,8 @@ body {
   top: 0;
   z-index: 2;
   width: 100%;
-  padding: 10px;
+  height: 60px;
+  padding: 3px;
   font-size: large;
   color: white;
   transition: background-color 0.3s ease;
@@ -39,6 +40,10 @@ body {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+}
+
+.navBar_categories a:hover {
+  text-decoration: underline;
 }
 
 .searchIcon {
@@ -70,27 +75,32 @@ body {
 .navTab {
   display: flex;
   align-items: center;
+  margin-right: 20px;
+  height: 100%;
 }
 
 .navTab a {
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .account {
   display: flex;
   align-items: center;
   margin-right: 15px;
+  padding: 0px 10px 0px 10px;
   cursor: pointer;
 }
 
 .myCart {
   display: flex;
   align-items: center;
+  padding: 0px 10px 0px 10px;
   cursor: pointer;
 }
 
-.myCart a {
-  margin-right: 20px;
+.account:hover, .myCart:hover {
+  border: 1px solid black;
+  height: 100%;
 }
 
 .searchBar {
@@ -261,6 +271,11 @@ body {
   transition: all 0.3s ease;
 }
 
+.shopping_item_photo {
+  align-self: center;
+  margin-left: 5px;
+}
+
 .enlarged_shopping_item {
   display: flex;
   flex-direction: row;
@@ -281,14 +296,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: scaleX(0.85) scaleY(1);
+  transform: scaleX(0.80) scaleY(1);
 }
 
 .shopping_item_scrollbar {
   overflow: auto;
   width: 290px;
   height: 400px;
-  /* margin-right: 10px; */
+  padding-right: 10px;
 }
 
 .shopping_item_name {
@@ -381,6 +396,7 @@ body {
   width: 15px;
   border: none;
   pointer-events: none;
+  text-align: center;
 }
 
 .shopping_item_quantity button{

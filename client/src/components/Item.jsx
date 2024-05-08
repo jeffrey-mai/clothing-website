@@ -25,7 +25,7 @@ const Item = (props) => {
   }
 
   for(const color of colors){
-    if(color !== 'white' || color !== 'grey'){
+    if(color !== 'white' && color !== 'grey'){
       itemColors.push(
         <div 
           className='shopping_item_color' 

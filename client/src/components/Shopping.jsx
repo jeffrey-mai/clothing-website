@@ -80,18 +80,34 @@ const Shopping = (props) => {
         {categoryProducts}
         <div className='shopping_items'>
           {props.categoryItems.map(ele => {
-            return(
-              <Item 
-                key={ele.id}
-                image={ele.image}
-                name={ele.title}
-                price={ele.price}
-                rating_rate={ele.rating_rate}
-                rating_count={ele.rating_count}
-                description={ele.description}
-                colors={ele.colors}
-              />
-            )
+            if(ele.category === 'women\'s clothing' || ele.category === 'men\'s clothing'){
+              return(
+                <Item 
+                  key={ele.id}
+                  image={ele.image}
+                  name={ele.title}
+                  price={ele.price}
+                  rating_rate={ele.rating_rate}
+                  rating_count={ele.rating_count}
+                  description={ele.description}
+                  colors={ele.colors}
+                />
+              )
+            }
+            else{
+              return(
+                <Item 
+                  key={ele.id}
+                  image={ele.image}
+                  name={ele.title}
+                  price={ele.price}
+                  rating_rate={ele.rating_rate}
+                  rating_count={ele.rating_count}
+                  description={ele.description}
+                  colors={[]}
+                />
+              )
+            }
           })}
         </div>
       </div>
