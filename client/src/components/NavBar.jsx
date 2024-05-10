@@ -43,14 +43,14 @@ const NavBar = () => {
         Clothing Store
       </a>
       <div className='navTab'>
-        <div className='account'>
+        <a href='http://localhost:8081/account' className='account'>
           <img className='accountIcon' src={accountIcon}/>
-          <a>Sign In</a>
-        </div>
-        <div className='myCart'>
-          <img className='cartIcon' src={cartIcon}/>
-          <a>My Cart</a>
-        </div>
+          <p>Sign In</p>
+        </a>
+        <a href='http://localhost:8081/cart' className='myCart'>
+            <img className='cartIcon' src={cartIcon}/>
+            <p>My Cart</p>
+        </a>
       </div>
     </div>
   );

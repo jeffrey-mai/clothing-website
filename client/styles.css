@@ -89,6 +89,8 @@ body {
   margin-right: 15px;
   padding: 0px 10px 0px 10px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .myCart {
@@ -96,6 +98,12 @@ body {
   align-items: center;
   padding: 0px 10px 0px 10px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.myCart p, .account p {
+  margin-left: 10px;
 }
 
 .account:hover, .myCart:hover {
@@ -403,4 +411,39 @@ body {
   border: none;
   background-color: white;
   cursor: pointer;
+}
+
+.cart {
+  margin: 10px;
+}
+
+.cart_description {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cartItem {
+  display: flex;
+}
+
+.cartItem_description {
+  display: flex;
+
+}
+
+.cartItem_price {
+  display: flex;
+  justify-content: end;
+  width: 30%;
+}
+
+.cart_order_summary {
+  margin-left: 50px;
+}
+
+.cart_order_summary div {
+  display: flex;
+
 }
