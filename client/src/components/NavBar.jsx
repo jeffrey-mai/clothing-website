@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import searchIcon from '../assets/search-icon.png';
 import cartIcon from '../assets/my-cart.png';
 import accountIcon from '../assets/account-icon.png';
 import logo from '../assets/logo.png';
 
 const NavBar = () => {
+  const currentUrl = window.location.href;
+
   window.addEventListener('scroll', function() {
     const navBar = document.querySelector('#navBar');
     const searchIcon = document.querySelector('.searchIcon');
     const accountIcon = document.querySelector('.accountIcon');
     const cartIcon = document.querySelector('.cartIcon');
 
-    if (window.scrollY > 0) {
+    if (window.scrollY > 0 || currentUrl === 'http://localhost:8081/cart') {
       navBar.style.backgroundColor = 'white';
       navBar.style.color = 'black';
       navBar.style.borderBottom = '1px solid black';
@@ -27,6 +29,22 @@ const NavBar = () => {
       cartIcon.style.filter = 'invert(100%)';
     }
   });
+
+  useEffect(() => {
+    const navBar = document.querySelector('#navBar');
+    const searchIcon = document.querySelector('.searchIcon');
+    const accountIcon = document.querySelector('.accountIcon');
+    const cartIcon = document.querySelector('.cartIcon');
+
+    if(currentUrl === 'http://localhost:8081/cart'){
+      navBar.style.backgroundColor = 'white';
+      navBar.style.color = 'black';
+      navBar.style.borderBottom = '1px solid black';
+      searchIcon.style.filter = 'invert(0%)';
+      accountIcon.style.filter = 'invert(0%)';
+      cartIcon.style.filter = 'invert(0%)';
+    }
+  }, [])
 
   return (
     <div className='navBar' id='navBar'>

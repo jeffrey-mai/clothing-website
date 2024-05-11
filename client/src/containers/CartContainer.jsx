@@ -23,29 +23,34 @@ const CartContainer = () => {
             size={'Medium'}
             quantity={1}
           />
+          <div className='cart_list_subtotal'>
+            <p>Subtotal (1 item):</p>
+            <p>$109.95</p>
+          </div>
         </div>
         <div className='cart_order_summary'>
           <h2>Order Summary</h2>
           <div className='cart_items_price'>
             <p>Items:</p>
-            <p>123</p>
+            <p>$123</p>
           </div>
           <div className='cart_shipping_price'>
             <p>Shipping & handling:</p>
-            <p>123</p>
+            <p>$123</p>
           </div>
           <div className='cart_before_tax_price'>
             <p>Total before tax:</p>
-            <p>123</p>
+            <p>$123</p>
           </div>
           <div className='cart_tax_price'>
             <p>Estimated tax to be collected:</p>
-            <p>123</p>
+            <p>$123</p>
           </div>
           <div className='cart_total_price'>
             <h2>Order total:</h2>
-            <h2>123</h2>
+            <h2>$123</h2>
           </div>
+          <button className='cart_order_button'>Place your order</button>
         </div>
       </div>
       <ToS />
