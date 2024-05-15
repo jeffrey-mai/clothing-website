@@ -18,9 +18,9 @@ cartController.addToCart = (req, res, next) => {
   const { id, title, price, image, color, size, quantity } = req.body;
   const queryString = `
     INSERT INTO myCart (id, title, price, image, color, size, quantity)
-    VALUES (${id}, ${title}, ${price}, ${image}, ${color}, ${size}, ${quantity});
+    VALUES ($1, $2, $3, $4, $5, $6, $7)
   `;
-  db.query(queryString)
+  db.query(queryString, [id, title, price, image, color, size, quantity])
     .then((data) => {
       console.log('addToCart middleware used');
       return next();

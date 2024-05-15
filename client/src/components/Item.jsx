@@ -26,7 +26,7 @@ const Item = (props) => {
   };
 
   const addToCartClick = () => {
-    fetch('http://localhost:8081/cart', {
+    fetch('http://localhost:3000/cart', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

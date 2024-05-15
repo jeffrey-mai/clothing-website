@@ -84,6 +84,7 @@ const Shopping = (props) => {
               return(
                 <Item 
                   key={ele.id}
+                  id={ele.id}
                   image={ele.image}
                   name={ele.title}
                   price={ele.price}
