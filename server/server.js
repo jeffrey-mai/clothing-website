@@ -1,5 +1,6 @@
 const express = require('express');
 const clothingRouter = require('./routers/clothingRouter.js');
+const cartRouter = require('./routers/cartRouter.js');
 const app = express();
 const PORT = 3000;
 
@@ -13,6 +14,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', clothingRouter);
+app.use('/cart', cartRouter);
 
 app.use((req, res) =>
   res.status(404).send('Page Not Found')

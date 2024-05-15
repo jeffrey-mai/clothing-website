@@ -3,9 +3,47 @@ import star from '../assets/star.png';
 import emptyStar from '../assets/empty-star.png';
 
 const Item = (props) => {
-  const {image, name, price, rating_rate, rating_count, description, colors} = props;
+  const { id, image, name, price, rating_rate, rating_count, description, colors } = props;
   const integerRating = Math.floor(rating_rate), fractionalRating = rating_rate - integerRating;
   const ratingStars = [], itemColors = [];
+
+  const handleSelectChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedOption(selectedValue);
+  };
+
+  const handleDecrement = () => {
+    if(quantity > 1) setQuantity(quantity - 1);
+  };
+
+  const handleIncrement = () => {
+    if(quantity < 10) setQuantity(quantity + 1);
+  };
+
+  const handleColorClick = (color) => {
+    setSelectedColor(color);
+    console.log('selected ' + color);
+  };
+
+  const addToCartClick = () => {
+    fetch('http://localhost:8081/cart', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        id: id,
+        title: name,
+        price: price,
+        image: image,
+        color: selectedColor,
+        size: selectedOption,
+        quantity: quantity
+      }),
+    })
+    .then(response => {
+      if(!response.ok) throw new Error('Network response was not ok');
+    })
+    .catch(error => { console.error('There was a problem with the POST request:', error); });
+  }
 
   for(let i = 1; i <= integerRating; i++){
     if(i <= rating_rate) ratingStars.push(<img key={i} className='star' height='18px' width='18px' src={star}/>);
@@ -30,6 +68,7 @@ const Item = (props) => {
         <div 
           className='shopping_item_color' 
           style={{ backgroundColor: color }}
+          onClick={() => handleColorClick(color)}
         />
       );
     }
@@ -38,12 +77,14 @@ const Item = (props) => {
         <div 
           className='shopping_item_color' 
           style={{ backgroundColor: color, border: '1px solid grey' }}
+          onClick={() => handleColorClick(color)}
         />
       );
     }
   }
 
   const [selectedOption, setSelectedOption] = useState('');
+  const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [quantity, setQuantity] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
   const [itemDescription, setItemDescription] = useState(
@@ -65,19 +106,6 @@ const Item = (props) => {
     { label: 'Large', value: 'Large' },
     { label: 'Extra Large', value: 'Extra Large' },
   ];
-
-  const handleSelectChange = (event) => {
-    const selectedValue = event.target.value;
-    setSelectedOption(selectedValue);
-  };
-
-  const handleDecrement = () => {
-    if(quantity > 1) setQuantity(quantity - 1);
-  };
-
-  const handleIncrement = () => {
-    if(quantity < 10) setQuantity(quantity + 1);
-  };
 
   useEffect(() => {
     if(isHovered){
@@ -114,7 +142,7 @@ const Item = (props) => {
             </div>
           </div>
           <div className='enlarged_shopping_item_addCart_price'>
-            <button>Add to Cart</button>
+            <button onClick={addToCartClick}>Add to Cart</button>
             <p>${price}</p>
           </div>
         </div>

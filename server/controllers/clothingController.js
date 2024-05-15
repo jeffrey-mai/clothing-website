@@ -1,8 +1,8 @@
 const db = require("../models/clothingModel.js");
 
-const clothingModel = {};
+const clothingController = {};
 
-clothingModel.getMenClothes = (req, res, next) => {
+clothingController.getMenClothes = (req, res, next) => {
   const queryString = "SELECT * FROM clothes c WHERE c.category = 'men''s clothing'";
   db.query(queryString)
     .then((data) => {
@@ -12,7 +12,7 @@ clothingModel.getMenClothes = (req, res, next) => {
     .catch((err) => {return next(err);});
 }
 
-clothingModel.getWomenClothes = (req, res, next) => {
+clothingController.getWomenClothes = (req, res, next) => {
   const queryString = "SELECT * FROM clothes c WHERE c.category = 'women''s clothing'";
   db.query(queryString)
     .then((data) => {
@@ -22,7 +22,7 @@ clothingModel.getWomenClothes = (req, res, next) => {
     .catch((err) => {return next(err);});
 }
 
-clothingModel.getElectronics = (req, res, next) => {
+clothingController.getElectronics = (req, res, next) => {
   const queryString = "SELECT * FROM clothes c WHERE c.category = 'electronics'";
   db.query(queryString)
     .then((data) => {
@@ -32,7 +32,7 @@ clothingModel.getElectronics = (req, res, next) => {
     .catch((err) => {return next(err);});
 }
 
-clothingModel.getJeweleries = (req, res, next) => {
+clothingController.getJeweleries = (req, res, next) => {
   const queryString = "SELECT * FROM clothes c WHERE c.category = 'jewelery'";
   db.query(queryString)
     .then((data) => {
@@ -42,4 +42,4 @@ clothingModel.getJeweleries = (req, res, next) => {
     .catch((err) => {return next(err);});
 }
 
-module.exports = clothingModel;
+module.exports = clothingController;

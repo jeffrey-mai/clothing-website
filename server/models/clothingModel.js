@@ -18,25 +18,25 @@ const pool = new Pool({
 
 async function startDB() {
   await pool.connect();
-  const fetchedData = {};
+  // const fetchedData = {};
 
-  const createClothingTableQuery = `
-    CREATE TABLE IF NOT EXISTS clothes (
-      id SERIAL PRIMARY KEY,
-      title VARCHAR(225),
-      price REAL,
-      description TEXT,
-      category VARCHAR(225),
-      image VARCHAR(225),
-      rating_rate NUMERIC(3, 1),
-      rating_count INTEGER
-    )
-  `;
+  // const createClothingTableQuery = `
+  //   CREATE TABLE IF NOT EXISTS clothes (
+  //     id SERIAL PRIMARY KEY,
+  //     title VARCHAR(225),
+  //     price REAL,
+  //     description TEXT,
+  //     category VARCHAR(225),
+  //     image VARCHAR(225),
+  //     rating_rate NUMERIC(3, 1),
+  //     rating_count INTEGER
+  //   )
+  // `;
 
-  const insertClothingDataQuery = `
-    INSERT INTO clothes (id, title, price, description, category, image, rating_rate, rating_count)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-  `;
+  // const insertClothingDataQuery = `
+  //   INSERT INTO clothes (id, title, price, description, category, image, rating_rate, rating_count)
+  //   VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+  // `;
   
   // try {
   //   await pool.query(createClothingTableQuery);

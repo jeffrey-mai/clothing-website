@@ -13,7 +13,7 @@ const CartContainer = () => {
       <NavBar />
       <div className='cart_description'>
         <div className='cart_list'>
-          <h1>Shopping Cart</h1>
+          <h2>Shopping Cart</h2>
           <CartItem
             key={1}
             image={"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"}
