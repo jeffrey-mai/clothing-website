@@ -13,8 +13,6 @@ cartController.getCartList = (req, res, next) => {
 }
 
 cartController.addToCart = (req, res, next) => {
-  console.log('addToCart');
-  console.log(req.body);
   const { id, title, price, image, color, size, quantity } = req.body;
   const queryString = `
     INSERT INTO myCart (id, title, price, image, color, size, quantity)

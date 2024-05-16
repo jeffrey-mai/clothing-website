@@ -428,13 +428,15 @@ body {
 
 .cart_list h2 {
   border-bottom: 1px solid gray;
-  padding-bottom: 0.67em;
+  padding-bottom: 0.83em;
+  margin-bottom: 0;
 }
 
 .cartItem {
   display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid gray;
-  padding-bottom: 21.44px;
+  padding: 0.83em 0em 0.83em 0em;
 }
 
 .cartItem_description {

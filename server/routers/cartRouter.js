@@ -2,7 +2,7 @@ const express = require("express");
 const cartController = require("../controllers/cartController.js");
 const router = express.Router();
 
-router.get("/list", cartController.getCartList, (req, res) =>
+router.get("/", cartController.getCartList, (req, res) =>
   res.status(200).json(res.locals.cartList)
 );
 

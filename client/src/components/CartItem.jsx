@@ -6,7 +6,7 @@ const CartItem = props => {
   return (
     <div className='cartItem'>
       <div className='cartItem_description'>
-        <img height='250px' width='250px' src={image}/>
+        <img height='250px' width='200px' src={image}/>
         <div className='cartItem_summary'>
           <h3>{name}</h3>
           <p>Color:&nbsp;{color}</p>
@@ -15,7 +15,7 @@ const CartItem = props => {
         </div>
       </div>
       <div className='cartItem_price'>
-        ${price}
+        ${Number(price).toFixed(2)}
       </div>
     </div>
   );
