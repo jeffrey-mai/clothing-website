@@ -12,20 +12,9 @@ const CartContainer = () => {
       .then(response => response.json())
       .then(data => {
         const cache = [];
-        console.log(data.rows);
         for(const item of data.rows){
           setTotalPrice(prevTotalPrice => prevTotalPrice + (item.price * item.quantity));
-          cache.push(
-            <CartItem
-              key={item.id}
-              image={item.image}
-              name={item.title}
-              price={item.price}
-              color={item.color}
-              size={item.size}
-              quantity={item.quantity}
-            />
-          );
+          cache.push(item);
         }
         setCartItems(cache);
       })
@@ -38,7 +27,20 @@ const CartContainer = () => {
       <div className='cart_description'>
         <div className='cart_list'>
           <h2>Shopping Cart</h2>
-          {cartItems}
+          {cartItems.map(item => (
+            <CartItem
+              key={item.id}
+              id={item.id}
+              image={item.image}
+              name={item.title}
+              price={item.price}
+              color={item.color}
+              size={item.size}
+              quantity={item.quantity}
+              setCartItems={setCartItems}
+              setTotalPrice={setTotalPrice}
+            />
+          ))}
           <div className='cart_list_subtotal'>
             <p>Subtotal (1 item):&nbsp;</p>
             <p className='cart_list_subtotal_number'>${Number(totalPrice).toFixed(2)}</p>
@@ -54,6 +56,7 @@ const CartContainer = () => {
             <p>Shipping & handling:</p>
             <p>Free</p>
           </div>
+          <div className='cart_divider'/>
           <div className='cart_before_tax_price'>
             <p>Total before tax:</p>
             <p>${Number(totalPrice).toFixed(2)}</p>

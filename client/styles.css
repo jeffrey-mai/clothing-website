@@ -191,7 +191,7 @@ body {
 
 .tos_shop_men:hover, .tos_shop_women:hover,
 .tos_shop_electronics:hover, .tos_shop_jewleries:hover,
-.shopping_products a:hover {
+.shopping_products a:hover, .cartItem_delete:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -423,7 +423,8 @@ body {
 
 .cart_list {
   border: 1px solid black;
-  padding: 0px 40px 40px 40px;
+  padding: 0px 40px 0px 40px;
+  width: 75%;
 }
 
 .cart_list h2 {
@@ -454,7 +455,9 @@ body {
 
 .cartItem_price {
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
   margin-top: 16px;
   width: 25%;
 }
@@ -487,9 +490,26 @@ body {
   margin-top: 0.83em;
 }
 
+.cart_divider {
+  border-bottom: 1px solid gray;
+  margin: 0 10% 0.83em 10% !important;
+  width: 80%;
+}
+
 .cart_list_subtotal {
   display: flex;
+  align-items: center;
   justify-content: end;
+  margin: 20px 0 20px 0;
+  font-size: large;
+}
+
+.cart_list_subtotal p {
+  margin: 0;
+}
+
+.cart_list_subtotal_number {
+  font-weight: bold;
 }
 
 .cart_order_button {

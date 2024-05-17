@@ -26,4 +26,18 @@ cartController.addToCart = (req, res, next) => {
     .catch((err) => {return next(err);});
 }
 
+cartController.deleteCartItem = (req, res, next) => {
+  const { id } = req.query;
+  const queryString = `
+    DELETE FROM mycart
+    WHERE id = ${id};
+  `;
+  db.query(queryString)
+    .then((data) => {
+      console.log('deleteCartItem middleware used');
+      return next();
+    })
+    .catch((err) => {return next(err);});
+}
+
 module.exports = cartController;

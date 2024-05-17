@@ -10,4 +10,8 @@ router.post("/", cartController.addToCart, (req, res) =>
   res.status(200).send("Item added to cart")
 );
 
+router.delete("/", cartController.deleteCartItem, (req, res) =>
+  res.status(200).send("Item deleted")
+);
+
 module.exports = router;
