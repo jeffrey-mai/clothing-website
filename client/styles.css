@@ -523,3 +523,14 @@ body {
   font-size: medium;
   transition: background-color 0.3s ease;
 }
+
+.accountContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.account_summary {
+  border: 1px solid black;
+}

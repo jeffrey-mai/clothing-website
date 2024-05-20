@@ -4,7 +4,6 @@ import Homepage from '../components/Homepage.jsx';
 import ToS from '../components/TermsOfService.jsx';
 
 const MainContainer = () => {
-  
   return (
     <div className='mainContainer'>
       <NavBar />
