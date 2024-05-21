@@ -8,9 +8,13 @@ import ElectronicContainer from './containers/ElectronicContainer.jsx';
 import JewleryContainer from './containers/JewleryContainer.jsx';
 import CartContainer from './containers/CartContainer.jsx';
 import AccountContainer from './containers/AccountContainer.jsx';
+import Cookies from 'js-cookie';
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    const savedAuth = Cookies.get('authenticated');
+    return savedAuth ? JSON.parse(savedAuth) : false;
+  });
 
   return (
     <GoogleOAuthProvider clientId="621243445009-orpi0rl9lvr7po9qqcgrccje2faeqplu.apps.googleusercontent.com">

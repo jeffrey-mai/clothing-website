@@ -1,23 +1,25 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
+import Cookies from 'js-cookie';
 
 const AccountPage = (props) => {
   const { isAuthenticated, setIsAuthenticated } = props;
-  const navigate = useNavigate();
   const handleSignIn = () => {
     setIsAuthenticated(true);
   }
-
+  
   const handleSignOut = () => {
     setIsAuthenticated(false);
     googleLogout();
   };
 
   useEffect(() => {
-    console.log(isAuthenticated, 'AFTER');
-    // navigate('/');
-  }, [isAuthenticated]);
+    if(isAuthenticated) {
+      Cookies.set('authenticated', true, { expires: 1 });
+      window.location.href = '/';
+    }
+    else Cookies.remove('authenticated');
+  }, [isAuthenticated])
   
   return (
     <div className='account_summary'>
