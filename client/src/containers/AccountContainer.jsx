@@ -1,12 +1,10 @@
 import React from 'react';
 import AccountPage from '../components/AccountPage.jsx';
 
-const AccountContainer = (props) => {
-  const { isAuthenticated, setIsAuthenticated } = props;
-
+const AccountContainer = () => {
   return (
     <div className='accountContainer'>
-      <AccountPage isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+      <AccountPage />
     </div>
   )
 }

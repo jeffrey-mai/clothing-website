@@ -3,8 +3,11 @@ import searchIcon from '../assets/search-icon.png';
 import cartIcon from '../assets/my-cart.png';
 import accountIcon from '../assets/account-icon.png';
 import logo from '../assets/logo.png';
+import { useAuth } from '../AuthProvider.jsx';
 
 const NavBar = () => {
+  const { isAuthenticated } = useAuth();
+
   useEffect(() => {
     const currentUrl = window.location.href;
     const navBar = document.querySelector('#navBar');
@@ -55,10 +58,17 @@ const NavBar = () => {
         Clothing Store
       </a>
       <div className='navTab'>
-        <a href='http://localhost:8081/account' className='account'>
-          <img className='accountIcon' src={accountIcon}/>
-          <p>Sign In</p>
-        </a>
+        {!isAuthenticated ? (
+          <a href='http://localhost:8081/account' className='account'>
+            <img className='accountIcon' src={accountIcon}/>
+            <p>Sign In</p>
+          </a>
+        ) : (
+          <a href='http://localhost:8081/account' className='account'>
+            <img className='accountIcon' src={accountIcon}/>
+            <p>Account</p>
+          </a>
+        )}
         <a href='http://localhost:8081/cart' className='myCart'>
             <img className='cartIcon' src={cartIcon}/>
             <p>My Cart</p>
