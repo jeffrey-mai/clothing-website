@@ -524,11 +524,49 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.account_login {
+.account_box {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-image: url(https://as2.ftcdn.net/v2/jpg/00/84/72/81/1000_F_84728133_SUB7ReZUbgvhRnOC6hXs7ENtC3ky5TSO.jpg);
+}
+
+.account_login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.account_user_pw {
+  width: 70%;
+}
+
+.account_user_pw form {
+  margin: 20px 0px 20px 0px;
+}
+
+.account_user_pw form input {
+  margin-top: 5px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0px 7px 0px 7px;
+}
+
+.account_3rd_party {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .account_summary button {
