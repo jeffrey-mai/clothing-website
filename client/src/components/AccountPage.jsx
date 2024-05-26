@@ -22,13 +22,13 @@ const AccountPage = () => {
 
   useEffect(() => {
     if(!isAuthenticated){
-      const passwordInput = document.getElementById('password');
-      const togglePassword = document.getElementById('togglePassword');
+      // const passwordInput = document.getElementById('password');
+      // const togglePassword = document.getElementById('togglePassword');
 
-      togglePassword.addEventListener('change', function () {
-        if (this.checked) passwordInput.type = 'text';
-        else passwordInput.type = 'password';
-      });
+      // togglePassword.addEventListener('change', function () {
+      //   if (this.checked) passwordInput.type = 'text';
+      //   else passwordInput.type = 'password';
+      // });
     }
   }, [])
   
@@ -44,11 +44,11 @@ const AccountPage = () => {
               <input type='text' id='username' name='username' placeholder='Enter your username'/>
             </form>
             <form className='account_pw'>
-              <label for='password'>Password</label>
+              <label htmlFor='password'>Password</label>
               <input type='password' id='password' name='password' placeholder='Enter your password' />
-              <input type='checkbox' id='togglePassword' />
+              {/* <input type='checkbox' id='togglePassword' /> */}
             </form>
-            <button className='cart_order_button'>Login</button>
+            <button className='cart_order_button' id='account_login_btn'>Login</button>
           </div>
           <div className='account_3rd_party'>
             <p>Or</p>
@@ -63,6 +63,39 @@ const AccountPage = () => {
       <div className='account_summary'>
         <NavBar />
         <button onClick={handleSignOut}>Sign Out</button>
+        <h1>Account</h1>
+        <div className='account_settings'>
+          <div>
+            <form className='account_user'>
+              <label htmlFor='username'>Profile Picture</label>
+              <input type='text' id='username' name='username' placeholder='Enter your username'/>
+            </form>
+            <form className='account_user'>
+              <label htmlFor='username'>Name</label>
+              <input type='text' id='username' name='username' placeholder='Enter your username'/>
+            </form>
+            <form className='account_user'>
+              <label htmlFor='username'>Birthday</label>
+              <input type='text' id='username' name='username' placeholder='Enter your username'/>
+            </form>
+            <form className='account_user'>
+              <label htmlFor='username'>Gender</label>
+              <input type='text' id='username' name='username' placeholder='Enter your username'/>
+            </form>
+            <form className='account_user'>
+              <label htmlFor='username'>Email</label>
+              <input type='text' id='username' name='username' placeholder='Enter your username'/>
+            </form>
+            <form className='account_user'>
+              <label htmlFor='username'>Phone</label>
+              <input type='text' id='username' name='username' placeholder='Enter your username'/>
+            </form>
+            <form className='account_user'>
+              <label htmlFor='username'>Address</label>
+              <input type='text' id='username' name='username' placeholder='Enter your username'/>
+            </form>
+          </div>
+        </div>
         <ToS />
       </div>
     )}

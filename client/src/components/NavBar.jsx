@@ -64,10 +64,16 @@ const NavBar = () => {
             <p>Sign In</p>
           </a>
         ) : (
+          <>
           <a href='http://localhost:8081/account' className='account'>
             <img className='accountIcon' src={accountIcon}/>
             <p>Account</p>
           </a>
+          <a href='http://localhost:8081/account' className='account'>
+          <img className='accountIcon' src={accountIcon}/>
+            <p>My Orders</p>
+          </a>
+          </>
         )}
         <a href='http://localhost:8081/cart' className='myCart'>
             <img className='cartIcon' src={cartIcon}/>

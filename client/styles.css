@@ -79,11 +79,7 @@ body {
   height: 100%;
 }
 
-.navTab a {
-  padding-left: 10px;
-}
-
-.account {
+.account, .myCart {
   display: flex;
   align-items: center;
   margin-right: 15px;
@@ -93,17 +89,8 @@ body {
   color: inherit;
 }
 
-.myCart {
-  display: flex;
-  align-items: center;
-  padding: 0px 10px 0px 10px;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
-
 .myCart p, .account p {
-  margin-left: 10px;
+  margin-left: 6px;
 }
 
 .account:hover, .myCart:hover {
@@ -554,11 +541,11 @@ body {
 
 .account_user_pw form input {
   margin-top: 5px;
-  width: 100%;
+  width: 94%;
   height: 40px;
   border: none;
   border-bottom: 1px solid black;
-  padding: 0px 7px 0px 7px;
+  padding: 0px 3% 0px 3%;
 }
 
 .account_3rd_party {
@@ -569,6 +556,39 @@ body {
   margin-top: 20px;
 }
 
+.account_summary h1 {
+  display: flex;
+  justify-content: center;
+}
+
 .account_summary button {
   margin-top: 90px;
+}
+
+#account_login_btn {
+  height: 18%;
+  width: 100%;
+}
+
+.account_settings {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.account_settings div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.account_settings div form{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
 }
