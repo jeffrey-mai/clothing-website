@@ -9,7 +9,7 @@ module.exports = {
     src: './client/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
   module: {
@@ -48,8 +48,8 @@ module.exports = {
   ],
   devServer: {
     static: {
-      publicPath: '/build',
-      directory: path.resolve(__dirname, 'build'),
+      publicPath: '/public',
+      directory: path.resolve(__dirname, 'public'),
     },
     proxy: [
       {'/': 'http://localhost:3000'},
