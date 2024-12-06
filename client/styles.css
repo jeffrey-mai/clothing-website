@@ -251,7 +251,6 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));
   grid-gap: 10px;
-  border: 1px solid black;
   width: 1600px;
 }
 
