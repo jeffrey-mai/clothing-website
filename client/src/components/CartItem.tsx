@@ -1,6 +1,7 @@
 import React from 'react';
+import { CartItemProps } from '../../../types'
 
-const CartItem = props => {
+const CartItem = props: CartItemProps => {
   const { id, image, name, price, color, size, quantity, setCartItems, setTotalPrice } = props;
 
   const handleCartDelete = (id) => {
