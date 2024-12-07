@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import NavBar from "../components/NavBar.js";
-import Homepage from "../components/Homepage.js";
-import ToS from "../components/TermsOfService.js";
+import NavBar from "../components/NavBar";
+import Homepage from "../components/Homepage";
+import ToS from "../components/TermsOfService";
 
 const MainContainer = () => {
   return (

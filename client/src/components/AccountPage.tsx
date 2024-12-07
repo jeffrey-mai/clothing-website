@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import Cookies from "js-cookie";
-import { useAuth } from "../AuthProvider.js";
-import NavBar from "./NavBar.js";
-import ToS from "./TermsOfService.js";
+import { useAuth } from "../AuthProvider";
+import NavBar from "./NavBar";
+import ToS from "./TermsOfService";
+import { AuthType } from "../../../types";
 
 const AccountPage = () => {
-  const { isAuthenticated, setIsAuthenticated } = useAuth();
+  const { isAuthenticated, setIsAuthenticated }: AuthType = useAuth();
   const handleSignIn = () => {
     setIsAuthenticated(true);
-    Cookies.set("authenticated", true, { expires: 1 });
+    Cookies.set("authenticated", "true", { expires: 1 });
     window.location.href = "/";
   };
 

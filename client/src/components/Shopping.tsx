@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Item from "./Item.js";
+import React from "react";
+import Item from "./Item";
 import womenHomePic from "../assets/womenHomePic.jpg";
 import menHomePic from "../assets/menHomePic.jpg";
+import { ShoppingProps } from "../../../types";
 
-const Shopping = (props) => {
+const Shopping: React.FC<ShoppingProps> = (props) => {
   const currentUrl = window.location.href;
   let categoryPhoto, categoryProducts;
 

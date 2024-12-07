@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import NavBar from "../components/NavBar.js";
-import ToS from "../components/TermsOfService.js";
-import CartItem from "../components/CartItem.js";
+import { useEffect, useState } from "react";
+import NavBar from "../components/NavBar";
+import ToS from "../components/TermsOfService";
+import CartItem from "../components/CartItem";
+import { CartItemType } from "../../../types";
 
 const CartContainer = () => {
-  const [cartItems, setCartItems] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [cartItems, setCartItems] = useState<CartItemType[]>([]);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
 
   useEffect(() => {
     fetch("http://localhost:3000/cart")

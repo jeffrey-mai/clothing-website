@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import NavBar from "../components/NavBar.js";
-import Shopping from "../components/Shopping.js";
-import ToS from "../components/TermsOfService.js";
+import { useEffect, useState } from "react";
+import NavBar from "../components/NavBar";
+import Shopping from "../components/Shopping";
+import ToS from "../components/TermsOfService";
+import { ItemType } from "../../../types";
 
 const JewleryContainer = () => {
-  const [Items, setItems] = useState([]);
+  const [Items, setItems] = useState<ItemType[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/jeweleries")
