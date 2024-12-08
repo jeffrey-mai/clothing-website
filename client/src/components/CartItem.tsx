@@ -1,9 +1,10 @@
 import React from 'react';
+import { CartItemProps } from '../../../types'
 
-const CartItem = props => {
+const CartItem: React.FC<CartItemProps> = props => {
   const { id, image, name, price, color, size, quantity, setCartItems, setTotalPrice } = props;
 
-  const handleCartDelete = (id) => {
+  const handleCartDelete = (id: number | string) => {
     fetch(`http://localhost:3000/cart?id=${id}`, {
       method: 'DELETE',
       headers: {'Content-Type': 'application/json'},

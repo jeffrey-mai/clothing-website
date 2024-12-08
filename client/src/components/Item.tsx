@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import star from '../assets/star.png';
 import emptyStar from '../assets/empty-star.png';
+import { ItemProps } from '../../../types';
 
-const Item = (props) => {
+const Item: React.FC<ItemProps> = (props) => {
   const { id, image, name, price, rating_rate, rating_count, description, colors } = props;
   const integerRating = Math.floor(rating_rate), fractionalRating = rating_rate - integerRating;
-  const ratingStars = [], itemColors = [];
+  const ratingStars: React.ReactNode[] = [], itemColors: React.ReactNode[] = [];
 
-  const handleSelectChange = (event) => {
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value;
     setSelectedOption(selectedValue);
   };
@@ -20,7 +21,7 @@ const Item = (props) => {
     if(quantity < 10) setQuantity(quantity + 1);
   };
 
-  const handleColorClick = (color) => {
+  const handleColorClick = (color: string) => {
     setSelectedColor(color);
     console.log('selected ' + color);
   };

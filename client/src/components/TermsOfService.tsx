@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import facebookLogo from '../assets/facebook-logo.png';
 import instagramLogo from '../assets/instagram-logo.png';
 import tiktokLogo from '../assets/tiktok-logo.png';
 import youtubeLogo from '../assets/youtube-logo.png';
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
 
 const TermsOfService = () => {
   

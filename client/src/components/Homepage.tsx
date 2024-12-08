@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import menPhoto from '../assets/menPhoto.jpg';
 import homepageGIF from '../assets/homepageGIF.mp4';
 

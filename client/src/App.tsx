@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import MainContainer from './containers/MainContainer.jsx';
-import MenContainer from './containers/MenContainer.jsx';
-import WomenContainer from './containers/WomenContainer.jsx';
-import ElectronicContainer from './containers/ElectronicContainer.jsx';
-import JewleryContainer from './containers/JewleryContainer.jsx';
-import CartContainer from './containers/CartContainer.jsx';
-import AccountContainer from './containers/AccountContainer.jsx';
-import { AuthProvider } from './AuthProvider.jsx';
+import { AuthProvider } from './AuthProvider';
+import MainContainer from './containers/MainContainer';
+import MenContainer from './containers/MenContainer';
+import WomenContainer from './containers/WomenContainer';
+import ElectronicContainer from './containers/ElectronicContainer';
+import JewleryContainer from './containers/JewleryContainer';
+import CartContainer from './containers/CartContainer';
+import AccountContainer from './containers/AccountContainer';
 
-const App = () => {
+const App: React.FC = (): JSX.Element => {
   return (
-    <GoogleOAuthProvider clientId={process.env.clientId}>
+    <GoogleOAuthProvider clientId={process.env.clientId!}>
       <AuthProvider>
         <Router>
           <Routes>

@@ -1,9 +1,10 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext, useContext, ReactNode } from 'react';
 import Cookies from 'js-cookie';
+import { AuthType } from '../../types';
 
-const AuthContext = createContext();
+const AuthContext = createContext<AuthType>({isAuthenticated: false, setIsAuthenticated: () => {}});
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider: React.FC<{children: ReactNode}> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     const savedAuth = Cookies.get('authenticated');
     return savedAuth ? JSON.parse(savedAuth) : false;
