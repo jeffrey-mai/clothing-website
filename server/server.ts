@@ -1,7 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const clothingRouter = require('./routers/clothingRouter.js');
-const cartRouter = require('./routers/cartRouter.js');
+import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
+import clothingRouter from './routers/clothingRouter';
+import cartRouter from './routers/cartRouter';
+
 const app = express();
 const PORT = 3000;
 
@@ -10,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(process.cwd() + '/src/build'));
 app.use(cors());
 
-app.use((req, res, next) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8081');
   next();
 });
@@ -18,11 +19,11 @@ app.use((req, res, next) => {
 app.use('/', clothingRouter);
 app.use('/cart', cartRouter);
 
-app.use((req, res) =>
+app.use((req: Request, res: Response) =>
   res.status(404).send('Page Not Found')
 );
 
-app.use((err, req, res, next) => {
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 500,

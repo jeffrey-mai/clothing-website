@@ -1,10 +1,11 @@
-const db = require("../models/clothingModel.js");
+import { Request, Response, NextFunction } from 'express';
+import db from '../models/clothingModel'
 
-const cartController = {};
+const cartController: { [key: string]: (req: Request, res: Response, next: NextFunction) => void } = {};
 
-cartController.getCartList = (req, res, next) => {
+cartController.getCartList = (req: Request, res: Response, next: NextFunction) => {
   const queryString = "SELECT * FROM mycart";
-  db.query(queryString)
+  db.query(queryString, [])
     .then((data) => {
       res.locals.cartList = data;
       return next();
@@ -12,7 +13,7 @@ cartController.getCartList = (req, res, next) => {
     .catch((err) => {return next(err);});
 }
 
-cartController.addToCart = (req, res, next) => {
+cartController.addToCart = (req: Request, res: Response, next: NextFunction) => {
   const { id, title, price, image, color, size, quantity } = req.body;
   const queryString = `
     INSERT INTO myCart (id, title, price, image, color, size, quantity)
@@ -26,13 +27,13 @@ cartController.addToCart = (req, res, next) => {
     .catch((err) => {return next(err);});
 }
 
-cartController.deleteCartItem = (req, res, next) => {
+cartController.deleteCartItem = (req: Request, res: Response, next: NextFunction) => {
   const { id } = req.query;
   const queryString = `
     DELETE FROM mycart
     WHERE id = ${id};
   `;
-  db.query(queryString)
+  db.query(queryString, [])
     .then((data) => {
       console.log('deleteCartItem middleware used');
       return next();
@@ -40,4 +41,4 @@ cartController.deleteCartItem = (req, res, next) => {
     .catch((err) => {return next(err);});
 }
 
-module.exports = cartController;
+export default cartController;

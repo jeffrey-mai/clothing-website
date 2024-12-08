@@ -48,12 +48,18 @@ module.exports = {
       publicPath: '/build',
       directory: path.resolve(__dirname, 'build'),
     },
-    proxy: [
-      {'/': 'http://localhost:3000'},
-    ],
+    // proxy: [
+    //   {
+    //     context: ['/'],
+    //     target: 'http://localhost:3000',
+    //     logLevel: 'info',
+    //     changeOrigin: true,  // This ensures proper routing for cross-origin requests
+    //     secure: false        // Disable SSL verification if needed
+    //   }
+    // ],
     historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.tsx', '.ts', '.js']
   },
 };

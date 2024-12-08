@@ -1,15 +1,18 @@
-const { Pool } = require('pg');
-require('dotenv').config();
+import pg, { QueryResult } from 'pg';
+import { ItemType } from '../../types';
+import dotenv from 'dotenv';
 
+dotenv.config();
+const { Pool } = pg;
 const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
 
 const pool = new Pool({
   host: PGHOST,
   database: PGDATABASE,
-  username: PGUSER,
+  user: PGUSER,
   password: PGPASSWORD,
   ssl: {
-    require: true,
+    rejectUnauthorized: true,
   },
   idleTimeoutMillis: null,
 });
@@ -63,11 +66,12 @@ async function startDB() {
   return;
 }
 
-// startDB();
-
-module.exports = {
-  query: (text, params, callback) => {
+startDB();
+const db = {
+  query: (text: string, params: any[]): Promise<QueryResult<ItemType[]>> => {
     console.log('executed query', text);
-    return pool.query(text, params, callback);
+    return pool.query(text, params);
   }
-};
+}
+
+export default db;
