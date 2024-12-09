@@ -1,9 +1,9 @@
 import { useEffect } from "react";
+import { useAuth } from "../AuthProvider";
 import searchIcon from "../assets/search-icon.png";
 import cartIcon from "../assets/my-cart.png";
 import accountIcon from "../assets/account-icon.png";
 import logo from "../assets/logo.png";
-import { useAuth } from "../AuthProvider";
 
 const NavBar = () => {
   const { isAuthenticated } = useAuth();

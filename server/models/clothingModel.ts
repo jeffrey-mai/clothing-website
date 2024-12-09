@@ -3,8 +3,8 @@ import { ItemType } from '../../types';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const { Pool } = pg;
 const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
+const { Pool } = pg;
 
 const pool = new Pool({
   host: PGHOST,
@@ -12,12 +12,10 @@ const pool = new Pool({
   user: PGUSER,
   password: PGPASSWORD,
   ssl: {
-    rejectUnauthorized: true,
+    rejectUnauthorized: false,
   },
   idleTimeoutMillis: null,
 });
-
-// pool.connect();
 
 async function startDB() {
   await pool.connect();

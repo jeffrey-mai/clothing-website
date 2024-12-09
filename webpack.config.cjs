@@ -37,7 +37,6 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: './client/styles.css' },
         { from: './client/favicon.ico' },
       ],
     }),
@@ -45,19 +44,11 @@ module.exports = {
   ],
   devServer: {
     static: {
-      publicPath: '/build',
       directory: path.resolve(__dirname, 'build'),
     },
-    // proxy: [
-    //   {
-    //     context: ['/'],
-    //     target: 'http://localhost:3000',
-    //     logLevel: 'info',
-    //     changeOrigin: true,  // This ensures proper routing for cross-origin requests
-    //     secure: false        // Disable SSL verification if needed
-    //   }
-    // ],
     historyApiFallback: true,
+    hot: true, // Enables Hot Module Replacement
+    open: true, // Automatically opens the browser
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
